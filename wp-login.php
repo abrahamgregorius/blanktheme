@@ -13,8 +13,7 @@
 /** Make sure that the WordPress bootstrap has run before continuing. */
 require __DIR__ . '/wp-load.php';
 
-$login_url = home_url('/login');
-header(`Location: $login_url`);
+wp_redirect(home_url('/login'));
 
 // Redirect to HTTPS login if forced to use SSL.
 if ( force_ssl_admin() && ! is_ssl() ) {

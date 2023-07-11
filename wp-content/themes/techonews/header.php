@@ -14,10 +14,11 @@
         </div>
         <div class="navbar-right">
             <ul>
-                <?php wp_nav_menu([
+                <?php if(is_user_logged_in()){ 
+                    wp_nav_menu([
                     'theme_location' => 'navbar-menu',
-                    'container' => 'div',
-                ])?>
+                    'container' => 'div',]);
+                    }?>
             </ul>
         </div>
     </div>

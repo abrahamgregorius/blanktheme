@@ -6,8 +6,8 @@ function load_scripts() {
 
 function load_style() {
     wp_enqueue_style('style-css', get_theme_file_uri('assets/css/style.css'), [], '1.0');
+    wp_enqueue_style('login-css', get_theme_file_uri('assets/css/login.css'), [], '1.0');
 }
-
 
 
 function technonews_register_menus(){
@@ -35,9 +35,13 @@ function register_campus_post_type() {
             'all_items' => 'All of Our Campuses',
             'singular_name' => 'Campus',
             'add_new' => "Add Campus",
-        ]
+        ],
+        'rewrite' => [
+            'with-front' => false,
+        ],
     ]);
 
+    flush_rewrite_rules(false);
 }
 
 
@@ -52,6 +56,7 @@ function say_hello_shortcode($attributes) {
 function register_shortcode() {
     add_shortcode('sayhello', 'say_hello_shortcode');
 }
+
 
 add_action('init', 'register_shortcode');
 add_action('init', 'technonews_register_menus');

@@ -8,7 +8,11 @@
     </div>
 
     <div class="head-category">
-        <?php wp_list_categories() ?>
+        <ul><?php foreach(get_categories() as $key => $category): ?>
+            <li><?php $category ?></li>
+        
+        </ul>
+            
     </div>
 </div>
 

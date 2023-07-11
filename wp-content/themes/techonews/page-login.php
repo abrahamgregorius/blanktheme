@@ -5,10 +5,10 @@ session_start();
 <?php get_header() ?>
 
 
-<div class="login-app">    
-    <h1>Welcome</h1>
-    
-    
+<div class="login-app">
+    <figure>
+        <img width="150px" src="<?php echo get_theme_file_uri('assets/images/logo.png') ?>" alt="">
+    </figure>
     <?php if(isset($_SESSION['errors'])): ?>
         <ul>
             <?php foreach($_SESSION['errors'] as $error) : ?>
